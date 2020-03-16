@@ -2,7 +2,7 @@
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-modules=("travis")
+modules=("node")
 
 makeModule() {
   for dir in ${modules[@]}; do
