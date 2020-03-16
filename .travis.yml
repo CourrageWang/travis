@@ -14,8 +14,7 @@ env:
   - DOCKER_CLI_EXPERIMTAL=enabled
   - GOMAXPROCS =4 GO111MODULE=on
 install:
-  - sudo apt update -y &&
-    apt install upx -y
+  - sudo apt update -y && sudo apt install upx -y
 before_script:
   - echo "$DOCKER_PASSWORD" | sudo docker login registry.cn-hangzhou.aliyuncs.com -u "$DOCKER_USERNAME" --password-stdin
 script:
