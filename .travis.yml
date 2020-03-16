@@ -25,7 +25,7 @@ before_script:
 
 script:
   - go mod download
-  - su ./build.sh
+  - sudo ./build.sh
 
 branches:
   only:
