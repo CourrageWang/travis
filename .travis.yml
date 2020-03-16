@@ -6,16 +6,21 @@ dist: bionic
 
 services:
   - docker
+
 addons:
   apt:
     packages:
       - docker-ce
+
 env:
-  - DOCKER_CLI_EXPERIMTAL=enabled
-  - GOMAXPROCS =4 GO111MODULE=on
+  - DOCKER_CLI_EXPERIMENTAL=enabled
+  - GOMAXPROCS=4 GO111MODULE=on
+
 install:
-  - sudo apt update -y && sudo apt install upx-ucl  -y
+  - sudo apt update -y && sudo apt install upx -y
+
 before_script:
+  # Login Aliyun Registry
   - echo "$DOCKER_PASSWORD" | sudo docker login registry.cn-hangzhou.aliyuncs.com -u "$DOCKER_USERNAME" --password-stdin
 
 script:
