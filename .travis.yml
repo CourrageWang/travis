@@ -1,0 +1,27 @@
+sudo: required
+language: go
+go:
+  - "1.12.4"
+dist: bionic
+
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+env:
+  - DOCKER_CLI_EXPERIMTAL=enabled
+  - GOMAXPROCS =4 GO111MODULE=on
+install:
+  - sudo apt update -y &&
+    apt install upx -y
+before_script:
+  - echo "$DOCKER_PASSWORD" | sudo docker login registry.cn-hangzhou.aliyuncs.com -u "$DOCKER_USERNAME" --password-stdin
+script:
+  - go mod download
+  - sudo ./build.sh
+
+branches:
+  only:
+    - master
