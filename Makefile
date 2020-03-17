@@ -1,5 +1,4 @@
 BINARY?=$(shell cat name.txt)
-VERSION?=$(go version)
 
 # Build opts
 BUILD_ENV?=CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH}
@@ -18,7 +17,6 @@ IMAGE_NAME_AMD64=${IMAGE_ORG}/${BINARY}:${IMAGE_VER}-${GOOS}_amd64
 
 build: clean
 	@echo ">>> Go BUILD $(BINARY)"
-	@echo ">>> Go Version $(VERSION)"
 	@$(BUILD_ENV) go build $(LD_FLAGS) -o $(BINARY).raw .
 	rm -f $(BINARY)
 	upx -o $(BINARY) $(BINARY).raw
