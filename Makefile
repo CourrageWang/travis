@@ -15,7 +15,7 @@ IMAGE_NAME_AMD64=${IMAGE_ORG}/${BINARY}:${IMAGE_VER}-${GOOS}_amd64
 
 
 build: clean
-	@echo ">>> Go BUILD $(BINARY)"
+
 	@$(BUILD_ENV) go build $(LD_FLAGS) -o $(BINARY).raw .
 	rm -f $(BINARY)
 	upx -o $(BINARY) $(BINARY).raw
