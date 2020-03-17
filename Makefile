@@ -16,7 +16,6 @@
  DOCKER_EXEC=${OS_SUDO}docker
 
  build: clean
- 	@echo ">>> Go BUILD $(BINARY)"
  	@$(BUILD_ENV) go build $(LD_FLAGS) -o $(BINARY).raw .
  	rm -f $(BINARY)
  	upx -o $(BINARY) $(BINARY).raw
