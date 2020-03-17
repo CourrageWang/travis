@@ -4,7 +4,7 @@ BINARY?=$(shell cat name.txt)
 BUILD_ENV?=CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH}
 
 IMAGE_VER?=0.11.0
-IMAGE_ORG=registry.cn-shenzhen.aliyuncs.com/edge-x
+IMAGE_ORG=registry.cn-hangzhou.aliyuncs.com/travis-x
 
 IMAGE_NAME_PLATFORM=${IMAGE_ORG}/${BINARY}:${IMAGE_VER}-${GOOS}_${GOARCH}
 IMAGE_NAME_VERSION=${IMAGE_ORG}/${BINARY}:${IMAGE_VER}
