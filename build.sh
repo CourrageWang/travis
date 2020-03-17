@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
@@ -6,7 +5,7 @@ modules=("node")
 
 makeModule() {
   for dir in ${modules[@]}; do
-    echo "###### Building module: ${dir}"
+    echo "------------------> Building module: ${dir}"
     cd ${dir}
     # Build linux dist
     GOOS=linux GOARCH=arm make -f ../Makefile $*
