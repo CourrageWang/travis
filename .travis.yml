@@ -28,6 +28,7 @@ script:
   - chmod +x build.sh
   - chmod +x Makefile
   - go version
+  - make -f Makefile build
   - sudo ./build.sh
 
 branches:
