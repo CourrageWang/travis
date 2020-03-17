@@ -27,6 +27,7 @@ script:
   - go mod download
   - chmod +x build.sh
   - chmod +x Makefile
+  - go version
   - sudo ./build.sh
 
 branches:
