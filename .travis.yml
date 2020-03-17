@@ -26,9 +26,6 @@ before_script:
 script:
   - go mod download
   - chmod +x build.sh
-  - chmod +x Makefile
-  - go version
-  - make -f Makefile build
   - sudo ./build.sh
 
 branches:

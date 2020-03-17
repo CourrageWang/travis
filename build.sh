@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo `go version`
+
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
 SUDO="sudo "
