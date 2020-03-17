@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-export PATH=/use/local/go/bin:$PATH
+export PATH=/home/travis/.gimme/versions/go1.12.4.linux.amd64/bin:$PATH
 export DOCKER_CLI_EXPERIMENTAL=enabled
+
+echo `go env`
 
 SUDO="sudo "
 if [ "wangyongqi_123" == "$(uname -s)" ]; then

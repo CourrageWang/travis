@@ -25,6 +25,7 @@ before_script:
 
 script:
   - go mod download
+  - go env
   - chmod +x build.sh
   - sudo ./build.sh
 
