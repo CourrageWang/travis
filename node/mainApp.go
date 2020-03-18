@@ -1,6 +1,16 @@
 package main
 
-func main() {
+import (
+	"fmt"
+	"net/http"
+)
 
-	println("this is a travis docker Project!!")
+func HelloResponse(rw http.ResponseWriter, request *http.Request) {
+
+	fmt.Fprintf(rw, "OK !")
+}
+
+func main() {
+	http.HandleFunc("/", HelloResponse)
+	http.ListenAndServe(":3000", nil)
 }
